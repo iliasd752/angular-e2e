@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
+import {players} from "../../models/player-data";
+import {TeamStore} from "../../store/teams.store";
 
 @Component({
   selector: 'app-player-list',
@@ -9,4 +11,8 @@ import { Component } from '@angular/core';
 })
 export class PlayerListComponent {
 
+  @Input() teamId!: number;
+  players = players;
+
+  store = inject(TeamStore);
 }

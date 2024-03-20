@@ -1,1 +1,18 @@
-<p>team-info works!</p>
+<div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+  <table class="min-w-full divide-y divide-gray-700 rounded-lg overflow-hidden">
+    <thead class="bg-gray-800 text-white">
+      @for (team of store.team(); track team.id; let index = $index) {
+        @if (team.id === id) {
+          <tr>
+            <th scope="col" class="px-4 py-3 text-left text-sm font-semibold">Team: {{ team.id }}</th>
+            <th scope="col" class="px-4 py-3 text-right text-sm font-semibold">Goals: {{ team.goals }}</th>
+          </tr>
+          <tr>
+            <th scope="col" class="px-4 py-3 text-left text-sm font-semibold">Rank: {{ team.rank }}</th>
+            <th scope="col" class="px-4 py-3 text-right text-sm font-semibold">Turns: {{ team.turns }}</th>
+          </tr>
+        }
+      }
+    </thead>
+  </table>
+</div>

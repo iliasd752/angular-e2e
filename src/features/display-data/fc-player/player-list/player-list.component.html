@@ -1,1 +1,20 @@
-<p>player-list works!</p>
+<div class="whitespace-nowrap py-5 pl-4 pr-3 text-sm">
+  @for (player of store.players(); track player.id; let index = $index) {
+    @if (player.teamId === teamId) {
+      <div class="flex items-center mb-4">
+        <div class="h-11 w-11 flex-shrink-0">
+          <img class="h-11 w-11 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+        </div>
+        <div class="flex flex-col ml-4">
+          <div class="font-medium text-gray-300">{{ player.id }}</div>
+          <div class="mt-1 text-gray-400">OVR: {{ player.ovr }} - LVL: {{ player.lvl }}</div>
+        </div>
+        <div class="ml-auto px-4">
+          <div class="bg-gray-600 p-2 text-white text-xl min-w-[2.5rem] flex justify-center items-center">
+            <div class="flex justify-center">{{ player.scored }}</div>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>

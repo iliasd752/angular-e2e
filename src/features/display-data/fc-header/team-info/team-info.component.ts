@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
+import {TeamStore} from "../../store/teams.store";
 
 @Component({
   selector: 'app-team-info',
@@ -9,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class TeamInfoComponent {
 
+  @Input() id!: number;
+
+  store = inject(TeamStore);
 }

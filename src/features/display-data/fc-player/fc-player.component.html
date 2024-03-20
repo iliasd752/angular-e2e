@@ -1,1 +1,26 @@
-<p>fc-player works!</p>
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-3xl">
+    <div class="px-4 sm:px-6 lg:px-8 text-gray-300">
+      <div class="mt-0 bg-gray-800 rounded-b-lg p-4"> <!-- Adjusted rounded-b-lg class for bottom rounded corners -->
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+            <table class="min-w-full divide-y divide-gray-700">
+              <tbody class="divide-y divide-gray-700">
+              <tr>
+                <!-- Left Players Component -->
+                <td>
+                  <app-player-list [teamId]="1"></app-player-list>
+                </td>
+                <!-- Right Players Component -->
+                <td>
+                  <app-player-list [teamId]="2"></app-player-list>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
