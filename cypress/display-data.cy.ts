@@ -6,5 +6,7 @@ describe('display-data.cy.ts', () => {
   })
 })
 
-cy.mount(DisplayDataComponent)
+it('mounts', () => {
+  cy.mount(DisplayDataComponent)
+})
 
