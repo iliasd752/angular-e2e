@@ -9,4 +9,3 @@ describe('display-data.cy.ts', () => {
 it('mounts', () => {
   cy.mount(DisplayDataComponent)
 })
-
