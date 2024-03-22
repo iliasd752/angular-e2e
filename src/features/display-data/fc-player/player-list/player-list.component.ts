@@ -1,7 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import {players} from "../../models/player-data";
 import {TeamStore} from "../../store/teams.store";
-import {name} from "express";
+import { locators } from "../../locators/locators";
 
 @Component({
   selector: 'app-player-list',
@@ -16,5 +16,4 @@ export class PlayerListComponent {
   players = players;
 
   store = inject(TeamStore);
-    protected readonly name = name;
 }
