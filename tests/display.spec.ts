@@ -30,7 +30,7 @@ test('has title and displays a table', async ({ page }) => {
 });*/
 
 
-test('table displays team and player data', async ({ page }) => {
+/*test('table displays team and player data', async ({ page }) => {
   const playerId = 1; // Define playerId here or obtain it from somewhere else
   await page.goto('http://localhost:4200/display-data');
 
@@ -43,4 +43,24 @@ test('table displays team and player data', async ({ page }) => {
   }));
 
   console.log('Displayed player ids', displayedPlayerIds);
+});*/
+
+test('table displays team and player data', async ({ page }) => {
+  const playerId = 1;
+  await page.goto('http://localhost:4200/display-data');
+
+  // Wait for the player items to be available
+  await page.waitForSelector(locators.listPlayerItem(playerId));
+
+  const playerItems = await page.$$(locators.listPlayerItem(playerId));
+  expect(playerItems).not.toBeNull();
+
+  const displayedPlayerIds = await Promise.all(playerItems.map(async item => {
+    // Use the data-testid attribute to select player items
+    const playerIdElement = await item.$(`[data-testid="list-player-item-${playerId}"]`);
+    return playerIdElement ? await playerIdElement.textContent() : null;
+  }));
+
+  console.log('Displayed player ids:', displayedPlayerIds);
+  // Add your assertions here
 });
